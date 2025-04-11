@@ -18,7 +18,11 @@ import androidx.compose.ui.unit.dp
 import com.example.coincapapp.models.Asset
 import com.example.coincapapp.ui.theme.CoinCapAppTheme
 import com.example.coincapapp.views.AssetRow
+import com.example.coincapapp.views.AssetsList
+import com.example.coincapapp.views.MainScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,48 +30,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             CoinCapAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Column (verticalArrangement = Arrangement.Center,
-                        modifier = Modifier.fillMaxSize()
-                    ){
-                        AssetRow(
-                            Asset(
-                                id = "1",
-                                name = "Bitcoin",
-                                percentage = 5.63,
-                                symbol = "BTC",
-                                price = "4151"
-                            )
-                        )
-                        Spacer(modifier = Modifier.padding(8.dp))
-                        AssetRow(
-                            Asset(
-                                id = "2",
-                                name = "Ethereum",
-                                percentage = -5.63,
-                                symbol = "ETH",
-                                price = "4151"
-                            )
-
-                        )
-                    }
+                    MainScreen()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CoinCapAppTheme {
-        Greeting("Android")
     }
 }

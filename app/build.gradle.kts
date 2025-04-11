@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -56,10 +57,26 @@ dependencies {
     //dependencies
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    implementation(libs.hilt.navegation.compose)
 
     //Async images
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
+
+    //Ktor
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.okhttp)
+   // implementation(libs.ktor.client.darwin)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.content.negotiation)
+
+    //Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    // Serialization
+    implementation(libs.kotlinx.serialization.json)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
