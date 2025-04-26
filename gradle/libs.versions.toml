@@ -1,6 +1,7 @@
 [versions]
 agp = "8.9.1"
 coilCompose = "3.1.0"
+firebaseBom = "33.13.0"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -47,6 +48,9 @@ ktor-content-negotiation = { module="io.ktor:ktor-client-content-negotiation", v
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-auth = { module = "com.google.firebase:firebase-auth" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
